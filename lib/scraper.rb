@@ -29,7 +29,8 @@ class Scraper
         profile[:linkedin] = link
       elsif link.include?('github')
         profile[:github] = link
-      elsif link.include?()
+      elsif link.include?(name)
+        profile[:blog] = link
       end
     end
 
