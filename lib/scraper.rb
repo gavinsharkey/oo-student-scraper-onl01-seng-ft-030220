@@ -17,7 +17,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     student = Nokogiri::HTML(open(profile_url))
-    name = student.css('h1.profile-name').gsub(' ', '').downcase
+    name = student.css('h1.profile-name').text.gsub(' ', '').downcase
     socials = student.css('div.social-icon-container a')
     profile = {}
 
